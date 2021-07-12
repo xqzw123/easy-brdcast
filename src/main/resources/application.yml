@@ -1,0 +1,27 @@
+## config
+
+## server
+server:
+  port: 8450
+
+## spring config
+spring:
+  datasource:
+    url: "jdbc:highgo://192.168.111.7:5866/highgo"
+    username: sysdba
+    password: "Cqxm@123"
+    driverClassName: com.highgo.jdbc.Driver
+#    durid:
+#      driver-class-name: com.highgo.jdbc.Driver
+
+## mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/*.xml
+  type-aliases-package: com.ljq.dmeo.springboot.mybatisplus.model.entity
+
+## log
+logging:
+  level:
+    com.ljq.demo.springboot.mybatisplus.dao: debug
+    com.ljq.demo.springboot.mybatisplus: debug
+
