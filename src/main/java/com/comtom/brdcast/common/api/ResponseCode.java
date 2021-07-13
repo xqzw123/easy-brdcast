@@ -23,7 +23,7 @@ public enum ResponseCode {
      */
     PARAM_ERROR(1001, "参数错误"),
     PARAM_NOT_NULL(1002, "参数不能为空"),
-    SIGN_ERROR(1003,"签名错误"),
+    SIGN_ERROR(1003,"签名认证失败"),
     REQUEST_METHOD_ERROR(1004, "请求方式错误"),
     MEDIA_TYPE_NOT_SUPPORT_ERROR(1005, "参数(文件)格式不支持"),
     PARAM_BIND_ERROR(1006, "参数格式错误,数据绑定失败"),

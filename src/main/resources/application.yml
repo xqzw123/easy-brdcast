@@ -7,7 +7,7 @@ server:
 ## spring config
 spring:
   datasource:
-    url: "jdbc:highgo://192.168.111.7:5866/highgo"
+    url: "jdbc:highgo://192.168.111.7:5866/comtom"
     username: sysdba
     password: "Cqxm@123"
     driverClassName: com.highgo.jdbc.Driver

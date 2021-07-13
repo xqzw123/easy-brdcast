@@ -18,6 +18,9 @@ public class ApiResult<T> implements Serializable {
 
     private static final long serialVersionUID = -2953545018812382877L;
 
+    @ApiModelProperty(value = "成功标识，true 正常", name = "successful")
+    private Boolean successful = true;
+
     /**
      * 返回码，200 正常
      */
@@ -76,6 +79,7 @@ public class ApiResult<T> implements Serializable {
      */
     public static ApiResult success(Object data, Map<String, Object> extraData) {
         ApiResult apiResult = new ApiResult();
+        apiResult.setSuccessful(true);
         apiResult.setCode(ResponseCode.SUCCESS.getCode());
         apiResult.setMsg(ResponseCode.SUCCESS.getMsg());
         apiResult.setData(data);
@@ -136,6 +140,7 @@ public class ApiResult<T> implements Serializable {
         result.setCode(code);
         result.setMsg(msg);
         result.setData(data);
+        result.setSuccessful(false);
         return result;
     }
 

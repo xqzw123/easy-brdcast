@@ -25,10 +25,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
         <springboot.version>2.3.3.RELEASE</springboot.version>
-<!--        <mysql.version>8.0.21</mysql.version>-->
         <swagger2.version>2.9.2</swagger2.version>
         <mybatis-plus.version>3.4.3</mybatis-plus.version>
         <hutool.version>5.4.1</hutool.version>
+        <fastjson.version>1.2.47</fastjson.version>
+
 
     </properties>
 
@@ -51,7 +52,6 @@
             <artifactId>HgdbJdbc</artifactId>
             <version>6.0.3.jre8</version>
         </dependency>
-
 
 
         <!-- lombok -->
@@ -77,6 +77,13 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+        <!-- 代码生成器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
         <!-- Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -88,6 +95,18 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
+        </dependency>
+        <!-- json 工具 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!-- token生成及校验 -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.8.2</version>
         </dependency>
 
     </dependencies>

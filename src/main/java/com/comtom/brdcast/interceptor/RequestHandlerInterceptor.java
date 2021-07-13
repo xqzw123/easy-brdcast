@@ -1,6 +1,9 @@
 package com.comtom.brdcast.interceptor;
 
-import org.springframework.web.client.RestTemplate;
+import com.alibaba.fastjson.JSONObject;
+import com.comtom.brdcast.common.api.ApiResult;
+import com.comtom.brdcast.common.api.ResponseCode;
+import com.comtom.brdcast.common.util.TokenUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -8,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 public class RequestHandlerInterceptor implements HandlerInterceptor {
 
@@ -24,14 +25,13 @@ public class RequestHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
-        RestTemplate restTemplate = new RestTemplate();
-        //统一拦截(校验token)
         //获得拦截请求的token
         String token = request.getHeader("token");
-        Map<String,String> paramMap = new HashMap();
-        paramMap.put("token",token);
-        //校验token 校验数据库的token存不存在
         boolean result = true;
+       if(token!=null){
+        //校验token符不符合格式
+           result = TokenUtils.verify(token);
+       }
         if(!result){
             // 被拦截
             PrintWriter writer = null;
@@ -39,7 +39,7 @@ public class RequestHandlerInterceptor implements HandlerInterceptor {
             response.setContentType("text/html; charset=utf-8");
             try {
                 writer = response.getWriter();
-                writer.print("{ \"successful\": false, \"code\": \"SYS-102\", \"msg\": \"失效令牌\" }");
+                writer.print(JSONObject.toJSONString(ApiResult.failure(ResponseCode.SIGN_ERROR)));
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
