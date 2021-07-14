@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author zengwei
  * @date 2020-08-31 14:09:53
  */
-@Service("userService")
+@Service
 @Transactional(rollbackFor = {Exception.class})
 @Slf4j
 public class AccountServiceImpl implements AccountService {

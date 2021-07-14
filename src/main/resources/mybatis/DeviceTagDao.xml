@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.comtom.brdcast.dao.DeviceTagDao">
+
+	<!-- 用户表结果集resultMap -->
+    <resultMap type="com.comtom.brdcast.model.entity.DeviceTagEntity" id="deviceTagMap">
+        <result property="id" column="id"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="tag_id" column="tag_id"/>
+
+    </resultMap>
+
+    <select id="getIdsByTags" parameterType="list" resultType="String">
+
+        select a.device_id from
+        (select * from eb_device_tag
+        where
+        <foreach collection="list" index="index" item="item" separator="or">
+            a.tag_id = #{item}
+        </foreach>
+       ) a
+        group by a.device_id having count(device_id) >${list.size-1}
+    </select>
+
+</mapper>

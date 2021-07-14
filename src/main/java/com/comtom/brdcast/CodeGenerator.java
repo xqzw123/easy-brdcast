@@ -210,7 +210,7 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setUrl("jdbc:highgo://192.168.111.7:5866/comtom");
-        // dsc.setSchemaName("public");
+        dsc.setSchemaName("public");
         dsc.setDriverName("com.highgo.jdbc.Driver");
         dsc.setUsername("sysdba");
         dsc.setPassword("Cqxm@123");
