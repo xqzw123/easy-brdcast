@@ -2,7 +2,7 @@ package com.comtom.brdcast.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.comtom.brdcast.common.api.ApiResult;
-import com.comtom.brdcast.common.api.ResponseCode;
+import com.comtom.brdcast.common.constants.ResponseCode;
 import com.comtom.brdcast.common.util.TokenUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

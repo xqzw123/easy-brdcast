@@ -1,4 +1,4 @@
-package com.comtom.brdcast.common.api;
+package com.comtom.brdcast.common.constants;
 
 import lombok.Getter;
 import lombok.ToString;

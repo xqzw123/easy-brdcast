@@ -1,5 +1,6 @@
 package com.comtom.brdcast.common.api;
 
+import com.comtom.brdcast.common.constants.ResponseCode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

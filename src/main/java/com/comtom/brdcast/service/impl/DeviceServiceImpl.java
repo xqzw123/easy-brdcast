@@ -139,7 +139,7 @@ public class DeviceServiceImpl extends ServiceImpl<DeviceDao,DeviceEntity> imple
 	 * @throws Exception
 	 */
 	@Override
-	public ApiResult list(DeviceSearchReq deviceSearchReq) throws Exception {
+	public ApiPageResponse list(DeviceSearchReq deviceSearchReq) throws Exception {
 		// todo 直接插 数据通过回调更新
 
 		LambdaQueryWrapper<DeviceEntity> userWrapper = new LambdaQueryWrapper<>();

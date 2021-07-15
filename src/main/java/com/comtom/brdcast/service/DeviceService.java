@@ -1,6 +1,7 @@
 package com.comtom.brdcast.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.comtom.brdcast.common.api.ApiPageResponse;
 import com.comtom.brdcast.common.api.ApiResult;
 import com.comtom.brdcast.model.entity.DeviceEntity;
 import com.comtom.brdcast.model.param.device.DeviceSaveReq;
@@ -41,7 +42,7 @@ public interface DeviceService extends IService<DeviceEntity> {
      * @return
      * @throws Exception
      */
-	ApiResult list(DeviceSearchReq deviceSearchReq) throws Exception;
+	ApiPageResponse list(DeviceSearchReq deviceSearchReq) throws Exception;
 
 	/**
      * 更新(单条)
