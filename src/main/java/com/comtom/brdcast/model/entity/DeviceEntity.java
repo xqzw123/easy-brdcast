@@ -11,13 +11,11 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 用户表实体类
  *
  * @author zengwei
- * @date 2020-09-01 13:24:08
  */
 @Data
-@TableName(value = "eb_device_info", resultMap = "deviceMap")
+@TableName(value = "eb_device_info")
 @ApiModel(value = "设备表", description = "设备表")
 public class DeviceEntity implements Serializable {
 

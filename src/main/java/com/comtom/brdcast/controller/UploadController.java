@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/saferest/file")
-@Api(description = "上传文件类", tags = {"UploadCtl"})
+@RequestMapping("/safeRest/file")
+@Api(description = "媒体文件", tags = {"媒体文件"})
 public class UploadController {
 
     @Autowired
@@ -42,7 +42,7 @@ public class UploadController {
      parentNodeId 父目录ID
      */
     @ApiOperation(value = "新建文件夹", notes = "新建文件夹")
-    @PostMapping("/newFolder")
+    @GetMapping("/newFolder")
     public ApiResult newFolder(
             @RequestParam(value = "parentNodeId", defaultValue = "") String parentNodeId,
             @RequestParam(value = "folderName",  defaultValue = "") String folderName
@@ -54,7 +54,7 @@ public class UploadController {
      * 方法描述：文件、文件夹重命名
      */
     @ApiOperation(value = "文件重命名", notes = "文件重命名")
-    @PostMapping("/fileRename")
+    @GetMapping("/fileRename")
     public ApiResult fileRename(
             @RequestParam(value = "fileId", defaultValue = "") String fileId,
             @RequestParam(value = "fileName",  defaultValue = "") String fileName
@@ -66,8 +66,8 @@ public class UploadController {
      * 方法描述：删除文件
      parentNodeId 父目录ID
      */
-    @ApiOperation(value = "文件重命名", notes = "文件重命名")
-    @PostMapping("/fileDel")
+    @ApiOperation(value = "删除文件", notes = "删除文件")
+    @DeleteMapping("/fileDel")
     public ApiResult fileDel(
             @RequestParam(value = "fileId", defaultValue = "") List<String> fileIds
     ) throws IOException {
@@ -89,7 +89,7 @@ public class UploadController {
     /**
      */
     @ApiOperation(value = "文件下载", notes = "文件下载")
-    @PostMapping("/fileDownload")
+    @GetMapping("/fileDownload")
     public ApiResult fileDownload(
             @RequestParam(value = "fileId", defaultValue = "") String fileId,
             HttpServletResponse response

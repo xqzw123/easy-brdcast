@@ -2,7 +2,7 @@
 
 ## server
 server:
-  port: 8450
+  port: 18450
 
 ## spring config
 spring:
@@ -13,7 +13,10 @@ spring:
     driverClassName: com.highgo.jdbc.Driver
 #    durid:
 #      driver-class-name: com.highgo.jdbc.Driver
-
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 ## mybatis-plus
 mybatis-plus:
   mapper-locations: classpath*:mybatis/*.xml

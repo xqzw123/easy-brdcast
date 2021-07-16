@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@TableName(value = "eb_file", resultMap = "fileMap")
+@TableName(value = "eb_file")
 @ApiModel(value = "文件表", description = "文件表")
 public class FileEntity implements Serializable {
     private static final long serialVersionUID = 1L;

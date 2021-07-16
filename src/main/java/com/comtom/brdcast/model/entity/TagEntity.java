@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @date 2020-09-01 13:24:08
  */
 @Data
-@TableName(value = "eb_tag", resultMap = "tagMap")
+@TableName(value = "eb_tag")
 @ApiModel(value = "标签表", description = "标签表")
 public class TagEntity implements Serializable {
 

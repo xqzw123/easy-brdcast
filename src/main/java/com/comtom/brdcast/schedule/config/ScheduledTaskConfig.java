@@ -22,7 +22,7 @@ public class ScheduledTaskConfig {
     public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
         LOGGER.info("创建定时任务调度线程池 start");
         ThreadPoolTaskScheduler threadPoolTaskScheduler = new ThreadPoolTaskScheduler();
-        threadPoolTaskScheduler.setPoolSize(20);
+        threadPoolTaskScheduler.setPoolSize(100);
         threadPoolTaskScheduler.setThreadNamePrefix("taskExecutor-");
         threadPoolTaskScheduler.setWaitForTasksToCompleteOnShutdown(true);
         threadPoolTaskScheduler.setAwaitTerminationSeconds(60);

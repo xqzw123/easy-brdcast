@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @date 2020-09-01 13:24:08
  */
 @Data
-@TableName(value = "eb_account_info", resultMap = "accountMap")
+@TableName(value = "eb_account_info")
 @ApiModel(value = "用户表", description = "用户表")
 public class AccountEntity implements Serializable {
 

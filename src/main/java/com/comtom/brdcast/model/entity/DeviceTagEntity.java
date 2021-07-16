@@ -10,7 +10,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 @Data
-@TableName(value = "eb_device_tag", resultMap = "deviceTagMap")
+@TableName(value = "eb_device_tag")
 @ApiModel(value = "设备表", description = "设备表")
 public class DeviceTagEntity implements Serializable {
     private static final long serialVersionUID = 1L;
